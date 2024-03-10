@@ -30,7 +30,7 @@ public class EventSystemController {
     }
     @PutMapping("/capacity/{index}/{capacity}")
     public ApiResponse changeCapacity(@PathVariable int index , @PathVariable String capacity){
-        events.get(index).setCapacity("10");
+        events.get(index).setCapacity(capacity);
         return new ApiResponse("Capacity changed");
     }
     @GetMapping("/search/{id}")
