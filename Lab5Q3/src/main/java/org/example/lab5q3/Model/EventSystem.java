@@ -6,13 +6,15 @@ import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
-@JsonFormat
+
 
 public class EventSystem {
     private String id;
     private String description;
     private String capacity;
+    @JsonFormat(pattern="yyyy-mm-dd")
     private LocalDate startData;
+    @JsonFormat(pattern="yyyy-mm-dd")
     private LocalDate endData;
 
 }

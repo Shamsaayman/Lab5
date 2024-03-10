@@ -14,23 +14,23 @@ public class studentController {
     }
 
     @GetMapping("/name")
-    public String getName (){
-        return "Shamsa";
+    public String getName (@PathVariable int index){
+        return students.get(index).getName();
     }
 
     @GetMapping("/age")
-    public String getAge(){
-        return "22";
+    public String getAge(@PathVariable int index){
+        return students.get(index).getAge();
     }
 
     @GetMapping("/degree")
-    public String getDegree(){
-        return "Bachelors";
+    public String getDegree(@PathVariable int index){
+        return students.get(index).getDegree();
     }
 
     @GetMapping("/status")
-    public boolean getStatus (){
-        return true;
+    public boolean getStatus (@PathVariable int index){
+        return students.get(index).isStatus();
     }
 
     @PostMapping("/add")
@@ -45,7 +45,7 @@ public class studentController {
         return new ApiResponse("Updated");
     }
     @DeleteMapping("/delete/{index}")
-    public ApiResponse delete(@PathVariable int index, @RequestBody student delete){
+    public ApiResponse delete(@PathVariable int index){
         students.remove(index);
         return new ApiResponse("Deleted");
     }
